@@ -1,0 +1,22 @@
+.SliceImageStyle {
+    .swiper-pagination {
+        width: 100px;
+        margin: auto;
+        padding-top: 30px;
+
+        .swiper-pagination-bullet {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #311213;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 7px;
+            height: 7px;
+            background-color: #311213;
+        }
+    }
+}
