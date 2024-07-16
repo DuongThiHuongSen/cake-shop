@@ -9,12 +9,20 @@ export interface CakeBannerItemProps {
 const CakeBannerItem = ({ img, bgBottomColor, text }: CakeBannerItemProps) => {
   const width = 200 * RatioW;
   const height = (20 / 27) * width;
+
   return (
-    <div style={{ width, height: width }}>
-      <img src={img} alt="" className={`w-full h-[${height}px]`} />
+    <div
+      style={{ width, height: width }}
+      className="w-[80%] h-[270px] md:w-auto md:h-auto mb-4 xl:mb-0 mx-auto md:mx-0 "
+    >
+      <img
+        src={img}
+        alt=""
+        className={`w-full h-[200px] object-cover md:h-[${height}px]`}
+      />
       <div
-        style={{ height: (70 * height) / 200 }}
-        className={` bg-[${bgBottomColor}] flex items-center justify-center text-base font-normal`}
+        style={{ background: bgBottomColor }}
+        className={`h-[70px] xl:h-[60px] 2xl:h-[70px] flex items-center justify-center text-base font-normal`}
       >
         {text ?? "Bread and Rolls"}
       </div>

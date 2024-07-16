@@ -46,10 +46,27 @@ export const Review = () => {
       <Swiper
         className="w-[86%] mt-[45px]"
         slidesPerView={3}
-        spaceBetween={30 * RatioW}
+        spaceBetween={30}
         freeMode={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          "300": {
+            slidesPerView: 1,
+          },
+          "768": {
+            slidesPerView: 2,
+            spaceBetween: "40px",
+          },
+          "1000": {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          "1600": {
+            slidesPerView: 4,
+            spaceBetween: "30px",
+          },
         }}
         modules={[Pagination]}
       >

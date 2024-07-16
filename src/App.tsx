@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BekaryLogo } from "./assets/icons";
+import { BekaryLogo, HumbergerIcon } from "./assets/icons";
 import { BannerText } from "./assets/images";
 import CakeBannerItem from "./component/CakeBannerItem";
 import { ExceptionalQuality } from "./component/exceptional-quality";
@@ -7,7 +7,7 @@ import { MomentOfPureJoy } from "./component/moment";
 import { NewArrival } from "./component/new-arrival";
 import { Review } from "./component/review";
 import { SliceImage } from "./component/slice-image/SliceImage";
-import { RatioW } from "./helper/const";
+import { RatioW, SCREEN_WIDTH } from "./helper/const";
 import { News } from "./component/news";
 import { Footer } from "./component/footer/inddex";
 
@@ -16,14 +16,36 @@ function App() {
     <div className="w-full relative ">
       <img
         src="/images/bg_banner.png"
-        className="absolute top-0 "
+        className="absolute top-0 min-h-[620px] object-cover"
         alt=""
         width={"100%"}
       />
 
       <div className="absolute top-0 w-full text-white">
-        <div className="w-[83%] mx-auto mt-[60px] h-[84px] border-y border-white font-bold text-2xl uppercase flex justify-between items-center">
-          <div className="flex justify-between w-[40%] ">
+        <div className="w-[83%] mx-auto mt-4 md:mt-[60px]  h-[84px] border-y border-white font-bold text-2xl xl:text-xl lg:text-lg md:text-sm uppercase flex justify-between items-center">
+          <BekaryLogo className="block md:hidden" />
+          <div className="inline-block md:hidden relative group">
+            <HumbergerIcon className="w-10 cursor-pointer" />
+            <div className="absolute hidden group-hover:block bg-[#311213] right-0 p-4 rounded-md text-base">
+              <Link className="hover:underline block py-2" to={"/"}>
+                Home
+              </Link>
+              <Link className="hover:underline block py-2" to={"/"}>
+                About
+              </Link>
+              <Link className="hover:underline block py-2" to={"/"}>
+                Menu
+              </Link>
+              <Link className="hover:underline block py-2" to={"/"}>
+                Blog
+              </Link>
+              <Link className="hover:underline block py-2" to={"/"}>
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          <div className="justify-between w-[40%] hidden md:flex">
             <Link className="hover:underline" to={"/"}>
               Home
             </Link>
@@ -40,9 +62,9 @@ function App() {
               Contact
             </Link>
           </div>
-            
-          <BekaryLogo />
-          <div className="flex justify-between w-[40%]">
+
+          <BekaryLogo className="hidden md:block lg:w-[145px] w-[100px]" />
+          <div className="justify-between w-[40%] hidden md:flex">
             <Link className="hover:underline" to={"/"}>
               Home
             </Link>
@@ -61,14 +83,14 @@ function App() {
           </div>
         </div>
 
-        <div className="ml-[8.5%] mt-[174px] flex items-end justify-between">
+        <div className="ml-0 xl:ml-[8.5%] mt-[80px] block xl:mt-[174px] xl:flex items-end justify-between">
           <BannerText
-            width={437 * RatioW}
-            height={304 * RatioW}
-            className="mb-4"
+            width={SCREEN_WIDTH < 640 ? undefined : 437 * RatioW}
+            height={SCREEN_WIDTH < 640 ? undefined : 304 * RatioW}
+            className="mb-20 xl:w-[320px] xl:mb-4 mr-4 ml-[8.5%]"
           />
 
-          <div className="flex gap-[30px]">
+          <div className="block ml-0 md:ml-[8.5%] md:flex gap-[30px]">
             <CakeBannerItem
               img="/images/priscilla.png"
               bgBottomColor="#A94D30"
@@ -87,9 +109,9 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-[#311213] w-[84%] mx-auto mt-[76px] h-[227px] flex items-center justify-between px-[50px] gap-[2%]">
+        <div className="bg-[#311213] w-[80%] sm:w-[84%] mx-auto mt-[76px] h-auto xl:h-[227px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 px-[50px] py-[38px] gap-y-8 gap-x-6 xl:gap-[2%]">
           <div>
-            <div className="font-bold text-xl capitalize pb-6">
+            <div className="font-bold text-xl capitalize pb-2 xl:pb-6">
               Free Delivery
             </div>
             <div className="leading-7 ">
@@ -99,7 +121,7 @@ function App() {
           </div>
 
           <div>
-            <div className="font-bold text-xl capitalize pb-6">
+            <div className="font-bold text-xl capitalize pb-2 xl:pb-6">
               100% secure payment
             </div>
             <div className="leading-7 ">
@@ -107,8 +129,9 @@ function App() {
               sit amet.
             </div>
           </div>
+
           <div>
-            <div className="font-bold text-xl capitalize pb-6">
+            <div className="font-bold text-xl capitalize pb-2 xl:pb-6">
               Quality guarantee
             </div>
             <div className="leading-7 ">
@@ -116,8 +139,9 @@ function App() {
               sit amet.
             </div>
           </div>
+
           <div>
-            <div className="font-bold text-xl capitalize pb-6">
+            <div className="font-bold text-xl capitalize pb-2 xl:pb-6">
               guaranteed savings
             </div>
             <div className="leading-7 ">

@@ -25,8 +25,10 @@ export const News = () => {
   return (
     <div className="w-[86%] mx-auto mt-[80px] text-[#311213]">
       <div className="flex items-center justify-between">
-        <div className="w-fit text-[48px] font-light">News & Events </div>
-        <button className="w-fit text-sm font-light py-[18px] px-[50px] bg-[#311213] rounded-lg text-white">
+        <div className="w-fit text-2xl sm:text-[48px] font-light">
+          News & Events{" "}
+        </div>
+        <button className="w-fit text-sm font-light py-[18px] px-8 sm:px-[50px] bg-[#311213] rounded-lg text-white">
           View all news
         </button>
       </div>
@@ -40,6 +42,23 @@ export const News = () => {
           clickable: true,
         }}
         modules={[Pagination]}
+        breakpoints={{
+          "300": {
+            slidesPerView: 1,
+          },
+          "600": {
+            slidesPerView: 2,
+            spaceBetween: "40px",
+          },
+          "1000": {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          "1600": {
+            slidesPerView: 4,
+            spaceBetween: "30px",
+          },
+        }}
       >
         {news.map((n, index) => {
           return (

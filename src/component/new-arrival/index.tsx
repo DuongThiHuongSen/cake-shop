@@ -1,7 +1,6 @@
-import { RatioW } from "src/helper/const";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const products: { image: string; name: string; price: string }[] = [
   {
@@ -59,10 +58,10 @@ const products: { image: string; name: string; price: string }[] = [
 export const NewArrival = () => {
   return (
     <div className=" w-[86%] mx-auto">
-      <div className="mx-auto w-fit flex gap-[30px] items-center">
-        <img src="images/New_Arrivals.png" alt="" width={276 * RatioW} />
+      <div className="mx-auto w-fit block sm:flex gap-[30px] items-center">
+        <img src="images/New_Arrivals.png" alt="" className="w-[276px]" />
 
-        <div className="w-[205px] text-[#A94D30] font-normal text-sm">
+        <div className="w-[205px] text-[#A94D30] font-normal pt-4 sm:pt-0 text-sm mx-auto sm:mx-0">
           Grab these amazing new furnitures before it runs out
         </div>
       </div>
@@ -75,6 +74,27 @@ export const NewArrival = () => {
         freeMode={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          "300": {
+            slidesPerView: 1,
+          },
+          "480": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "640": {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          "1000": {
+            slidesPerView: 4,
+            spaceBetween: 5,
+          },
+          "1280": {
+            slidesPerView: 5,
+            spaceBetween: 5,
+          },
         }}
         modules={[Pagination]}
       >

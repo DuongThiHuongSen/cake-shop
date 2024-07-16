@@ -4,6 +4,7 @@ import { ReactComponent as IconLogoPinterest } from "./ic_logo_fb.svg";
 import { ReactComponent as IconLogoIg } from "./ic_logo_ig.svg";
 import { ReactComponent as IconLogoTwitter } from "./ic_logo_pinterest.svg";
 import { ReactComponent as IconLogoFb } from "./ic_logo_twitter.svg";
+import { ReactComponent as HumbergerIcon } from "./bar.svg";
 
 export {
   BekaryLogo,
@@ -12,4 +13,5 @@ export {
   IconLogoIg,
   IconLogoTwitter,
   IconLogoFb,
+  HumbergerIcon,
 };

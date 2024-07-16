@@ -3,26 +3,21 @@ import { RatioW } from "src/helper/const";
 
 export const MomentOfPureJoy = () => {
   const Ratio = RatioW > 1 ? 1 : RatioW;
-  const width = Ratio * 598;
-  const height = 549 * Ratio;
-  const widthText = 764 * Ratio;
 
   return (
     <div
-      className={`mx-auto py-[130px] relative flex justify-end`}
-      style={{ width: RatioW > 1 ? "70%" : "77%" }}
+      className={`mx-auto pt-0 pb-[350px] sm:pt-[200px] sm:pb-[100px] xl:py-[130px] relative md:flex justify-end items-end w-[88%] sm-[77%] 2xl-[70%]`}
     >
-      <div className="absolute top-[131px] left-16">
-        <div className="flex flex-col items-start pt-8">
+      <div className="absolute top-[50px] left-0 md:top-[131px] md:left-16">
+        <div className="flex flex-col items-start sm:pt-8">
           <img
             src="/images/moment.png"
             alt=""
-            className="object-contain "
-            style={{ width: widthText }}
+            className={`object-contain w-[90%] sm:w-[80%] md-:w-[60%]`}
           />
 
           <div
-            className="items-left justify-around text-[#311213] pt-7"
+            className="items-left justify-around text-[#311213] pt-7 w-[80%]"
             style={{ width: 503 * Ratio }}
           >
             <div className="text-2xl leading-[40px] font-light">
@@ -41,10 +36,9 @@ export const MomentOfPureJoy = () => {
       </div>
 
       <img
-        className=""
+        className="w-[90%] sm:w-[598px] sm:h-[549px] object-cover"
         src="/images/artur2.png"
         alt=""
-        style={{ width, height }}
       />
     </div>
   );
