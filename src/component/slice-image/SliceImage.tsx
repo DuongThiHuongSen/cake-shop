@@ -9,9 +9,6 @@ const silceData: { title: string; image: string }[] = [
   { title: "Cakes", image: "nathan3.png" },
   { title: "Pastries", image: "nathan4.png" },
   { title: "Pizzas", image: "nathan1.png" },
-  { title: "Bakery", image: "nathan2.png" },
-  { title: "Cakes", image: "nathan3.png" },
-  { title: "Pastries", image: "nathan4.png" },
 ];
 
 export const SliceImage = () => {
@@ -24,6 +21,23 @@ export const SliceImage = () => {
         freeMode={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          "300": {
+            slidesPerView: 1,
+          },
+          "600": {
+            slidesPerView: 2,
+            spaceBetween: "40px",
+          },
+          "1000": {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          "1600": {
+            slidesPerView: 4,
+            spaceBetween: "30px",
+          },
         }}
         modules={[Pagination]}
       >
